@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Rezaul Islam - Mobile App Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #5a4b9c; /* Elegant indigo */
+            --secondary-color: #2d2d2d; /* Deep charcoal */
+            --accent-color: #f4a261; /* Warm coral accent */
+            --light-color: #f9f7ff; /* Soft off-white */
+            --dark-color: #1a1a1a; /* Rich black */
+            --gray-color: #7a7a7a; /* Muted gray */
+            --white-color: #ffffff;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #5a4b9c 0%, #8b7fd6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: var(--white-color);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-list a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white-color);
+            padding: 8rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInRight 1.5s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background: var(--white-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white-color);
+            color: var(--white-color);
+            margin-left: 1.5rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--white-color);
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            color: var(--white-color);
+            margin-right: 2rem;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* About Section */
+        .section {
+            padding: 8rem 5%;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            color: var(--gray-color);
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .skill-tag {
+            background: var(--white-color);
+            color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--white-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 15px 50px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--white-color);
+            border: 5px solid var(--accent-color);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -14px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -14px;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background-color: var(--white-color);
+            position: relative;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content .date {
+            color: var(--gray-color);
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+        }
+
+        .timeline-content ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--white-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.08);
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+        }
+
+        .project-info p {
+            color: var(--gray-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: rgba(90, 75, 156, 0.1);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: transform 0.3s Prince2: none;
+        }
+
+        .project-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient);
+            color: var(--white-color);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 2.5rem;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .contact-methods {
+            list-style: none;
+        }
+
+        .contact-methods li {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-methods i {
+            font-size: 1.8rem;
+            margin-right: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .contact-methods a, .contact-methods span {
+            color: var(--white-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-methods a:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-social {
+            margin: 2rem 0;
+        }
+
+        .footer-social a {
+            color: var(--white-color);
+            margin: 0 1.5rem;
+            font-size: 1.8rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links li {
+            margin: 0 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white-color);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 30px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline::after {
+                left: 35px;
+            }
+
+            .timeline-item::after {
+                left: 22px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .nav-list li {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Rezaul Islam</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-list" id="navList">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Mobile Application Developer</h1>
+                <p>Experienced Software Engineer specializing in high-performance, responsive mobile applications with 7+ years in modern development practices.</p>
+                <div>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://stackoverflow.com/users/rezaul-islam" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                    <a href="https://linkedin.com/in/md-rezaul-islam-tarek" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/rezaulislamtarek" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/img/reza_hero.png" alt="Md. Rezaul Islam">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Senior Software Engineer with expertise in Mobile Development</h3>
+                    <p>I'm a passionate Mobile Application Developer with over 7 years of experience specializing in iOS and Android platforms. Currently working as a Senior Software Engineer at Media365 Limited, I focus on creating high-performance, responsive applications with clean architecture and excellent user experience.</p>
+                    <p>My journey in software development has equipped me with strong technical skills and a deep understanding of both Swift and Kotlin ecosystems. I have built numerous applications from the ground up, implementing modern architectural patterns like MVVM and ensuring scalable, maintainable code.</p>
+                    <p>I enjoy tackling complex problems and creating elegant solutions that deliver real value to users. My goal is to continue growing as a developer while contributing to meaningful projects that make a positive impact.</p>
+                    <div class="skills">
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">UIKit</span>
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Android</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Realm</span>
+                        <span class="skill-tag">Coroutines</span>
+                        <span class="skill-tag">Dependency Injection</span>
+                        <span class="skill-tag">REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>My Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior Mobile Application Developer</h3>
+                        <h4>Media365 Limited</h4>
+                        <span class="date">Sep 2022 - Present</span>
+                        <ul>
+                            <li>Built 7Seconds (social media), Ratehammer (fintech), and DocTime iOS apps from ground up using MVVM architecture</li>
+                            <li>Refactored legacy Java codebases to Kotlin for improved efficiency</li>
+                            <li>Migrated DocTime from SQLite to Room database</li>
+                            <li>Transitioned video calls from Amazon Chime to Agora SDK</li>
+                            <li>Applied industry-standard architecture and design principles</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior Software Engineer</h3>
+                        <h4>Samsung R&D Institute Bangladesh</h4>
+                        <span class="date">Aug 2019 - Aug 2022</span>
+                        <ul>
+                            <li>Developed a robot controller Android application using OpenCV</li>
+                            <li>Automated Tizen IoT platform testing environment</li>
+                            <li>Executed smoke and regression tests</li>
+                            <li>Utilized the Aurum automation framework</li>
+                            <li>Mentored team members for certification exams</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Android Application Trainer</h3>
+                        <h4>Digicon Technology</h4>
+                        <span class="date">Jul 2018 - Dec 2018</span>
+                        <ul>
+                            <li>Completed 4 months of advanced training</li>
+                            <li>Developed Skill assessment application for students</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Android Application Developer</h3>
+                        <h4>DataTrix Soft</h4>
+                        <span class="date">Jan 2018 - Jun 2018</span>
+                        <ul>
+                            <li>Developed College Admission BD Application</li>
+                            <li>Developed Expense management Application</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/7-icon.webp" alt="7Seconds App">
+                    </div>
+                    <div class="project-info">
+                        <h3>7Seconds</h3>
+                        <p>A social media app designed for quick engagement, allowing users to upload 7-second videos, participate in contests, and enjoy an endless scroll of short videos.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SwiftUI</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">AVFoundation</span>
+                            <span class="project-tag">Realm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/doctime.jpg" alt="DocTime App">
+                    </div>
+                    <div class="project-info">
+                        <h3>DocTime</h3>
+                        <p>Comprehensive Healthcare App: Doctor Consultations, Health Records, Medicine Delivery, and More.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SwiftUI</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">CallKit</span>
+                            <span class="project-tag">PushKit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/ratehammer.png" alt="Ratehammer App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Ratehammer</h3>
+                        <p>A fintech app tailored for the KSA market that provides loan services, offering the best loan options based on interest rates, duration, and comprehensive verification processes.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SwiftUI</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">Realm Database</span>
+                            <span class="project-tag">Localization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/iosQuiz.png" alt="AnyBlog App">
+                    </div>
+                    <div class="project-info">
+                        <h3>iOS Quiz</h3>
+                            <p>
+                                Users can take timed quizzes on various iOS topics, adding challenge and engagement. They can view their rank, track progress, and access quiz history via a detailed profile.
+                            </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">UIKit</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">Swift Package Manager</span>
+                            <span class="project-tag">Timmer</span>
+                            <span class="project-tag">Combine</span>
+                            <span class="project-tag">URLSession</span>
+                            <span class="project-tag">Auto Layout</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/macrofit.svg" alt="Macrofit App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Macrofit</h3>
+                        <p>Personalized meal plans and nutrition tailored to fuel your fitness goals. Designed to help you perform, recover, and achieve results faster.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SwiftUI</span>
+                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">PDFKit</span>
+                            <span class="project-tag">Charts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/crust.svg" alt="CRUST Pizza App">
+                    </div>
+                    <div class="project-info">
+                        <h3>CRUST Pizza</h3>
+                        <p>A Pizza delivery application for CRUST Pizza with ordering and tracking features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SwiftUI</span>
+                            <span class="project-tag">MV Pattern</span>
+                            <span class="project-tag">MapKit</span>
+                            <span class="project-tag">Push Notification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Awards Section -->
+     <section class="section" id="awards">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Awards & Certifications</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Best Mobile Application Engineer</h3>
+                        <h4>Media 365 Ltd</h4>
+                        <span class="date">2023</span>
+                        <p>Honored with the Best Mobile Application Engineer award for outstanding contributions to Media 365 Ltd.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Advanced Programming Test</h3>
+                        <h4>Samsung R&D Institute Bangladesh</h4>
+                        <span class="date">2019</span>
+                        <p>Successfully passed the Advanced Programming Test at Samsung R&D, showcasing advanced programming and problem-solving skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Talk About Your Project</h3>
+                    <p>I'm currently open to new opportunities in stable organizations offering excellent benefits, including flexible work options. Feel free to reach out if you'd like to discuss potential collaborations or have any questions.</p>
+                    <ul class="contact-methods">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:mrezaulislam.t@gmail.com">mrezaulislam.t@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+8801636469701">+880 1636 469701</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kallyanpur, Dhaka 1207, Bangladesh</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://stackoverflow.com/users/8543717/rezaul-islam" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://linkedin.com/in/md-rezaul-islam-tarek" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rezaulislamtarek" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="copyright">© <span id="year">2025</span> Md. Rezaul Islam. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('navList');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
